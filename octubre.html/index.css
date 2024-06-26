@@ -10,29 +10,54 @@ body{
     position: relative;
     padding-bottom: 3rem;
     min-height: 100vh;
+    max-width: 100%;
     background-image: linear-gradient(rgba(5,7,12,0.75),rgba(5,7,12,0.75)),
      url(./images/imagen1.jpg);
+    overflow-x: hidden;
+    width: 100%;
+        
 }
 
+/*NOTICIAS*/
+
+.container_noticias{
+    text-align: center;
+}
+
+/*IMAGENES DEL INDEX*/
+
 .imgenes_index{
-    width: 90%;
+    max-width: 90%;
+    margin:auto;
     height: fit-content;
-    background-attachment: fixed;
+    /*background-attachment: fixed;*/
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap-reverse;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /*overflow-x: hidden;*/
     }
 .img-imagenes_index{
-    width: 90%;
-    height: fit-content;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    object-fit: contain;
+    /*height: fit-content;
     padding-top: 20px;
-    background-attachment: fixed;
+    background-attachment: scroll;*/
 }
+
+/*CONTAINER PARRAFOS*/
+
 .container{
+    text-align: center;
     color: aliceblue;
     margin-top: 60px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 .Container-fluid{
+text-align: center;
 background: #000000;  
 background: -webkit-linear-gradient(to bottom, #434343, #000000);  
 background: linear-gradient(to bottom, #2d2a2a, #000000); 
@@ -44,6 +69,8 @@ padding-top: 15px;
 display: flex;
 justify-content: center;
 }
+
+/*HEADER*/
 
 .header{
 display: flex;
@@ -86,6 +113,9 @@ margin-left: 20px;
 .nav__ul--li a:hover{
     color: rgb(94, 112, 198);
 }
+
+/*FOOTER*/
+
 .footer{
 display: flex;
 justify-content: space-around;
@@ -109,6 +139,7 @@ width: 100%;
 .button h6 a:hover{
     color: rgb(94, 112, 198);
 }
+
 .grid-container{
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
@@ -174,6 +205,14 @@ div h2{
     color: aliceblue;
     padding-top: 15px;
 }
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    color: rgb(94, 112, 198);
+}
+
 
 /*REDES SOCIALES*/
 
@@ -204,18 +243,24 @@ div ul li a:hover{
 
 
 @media screen and (max-width: 996px) and (min-width: 620px){
+    body {
+        width: 100%;
+        overflow-x: hidden;
+      }
     header{
         display: flex;
         flex-direction: column;
+        margin-left: 0;
     }   
     .header__nav{
-        margin-left: 245px;
+        margin-left: 3px;
     }
     .header__nav--ul{
         display: flex;
         justify-content: center;
         flex-direction: column;
-        margin-right: 245px;
+        /*margin-right: 245px;*/
+        margin-right: 0;
     }
     .nav__ul--li{
         padding: 5px;
@@ -236,6 +281,58 @@ div ul li a:hover{
     .container{
         padding-right: 4px;
     }
+
+    @media screen and (max-width: 557px) and (min-width: 0px){
+    
+    body {
+            width: 100%;
+            overflow-x: hidden;
+          }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        overflow-x: hidden;
+    }   
+    .header__nav{
+        margin-left: 3px;
+        /*overflow-x: hidden;*/
+    }
+    .header__nav--ul{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 245px;
+    }
+    .nav__ul--li{
+        padding: 5px;
+    }
+
+    /*responsive SECTION*/
+    section article p{
+        margin: 10px;
+        overflow-x: hidden;
+    }
+
+    /*RESPONSIVE IMG*/
+    .img-imagenes_index{
+        display: flex;
+        overflow-x: hidden;
+    }
+    /*RESPONSIVE CONTAINER*/
+    .container{
+        padding-right: 4px;
+    }
+}
+
+/*@media screen and (min-width: 600px) {
+    body {
+      width: 100%;
+      overflow-x: hidden;
+    }
+  }*/
+
 
     /*imagenes INDEX
     .imagenes_index{
@@ -307,6 +404,8 @@ div ul li a:hover{
      
     }
 
+   
+
     /*responsive HEADER*/
 
 
@@ -314,18 +413,33 @@ div ul li a:hover{
     header{
         display: flex;
         flex-direction: column;
+        overflow-x: hidden;
+        
     }   
     .header__nav{
         margin-left: 250px;
+        overflow-x: hidden;
+        /*margin-left: 0;*/
     }
     .header__nav--ul{
         display: flex;
         justify-content: center;
         flex-direction: column;
         margin-right: 255px;
+        overflow-x: hidden;
     }
     .nav__ul--li{
         padding: 5px;
     }
-
+    .imgenes_index {
+        max-width: 100%;
+        margin: auto;
+        flex-direction: column; /* Cambia la dirección a columna para que las imágenes se apilen verticalmente */
+        align-items: center;
+    }
+    .img-imagenes_index{
+        max-width: 100%;
+        margin: 10px 0;
+    }
+    
     }
